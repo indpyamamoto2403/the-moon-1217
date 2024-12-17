@@ -26,12 +26,8 @@ const form = useForm({
     <section>
         <header>
             <h2 class="text-lg font-medium text-gray-900">
-                Profile Information
+                ステータス登録
             </h2>
-
-            <p class="mt-1 text-sm text-gray-600">
-                Update your account's profile information and email address.
-            </p>
         </header>
 
         <form
@@ -39,7 +35,7 @@ const form = useForm({
             class="mt-6 space-y-6"
         >
             <div>
-                <InputLabel for="name" value="Name" />
+                <InputLabel for="name" value="名前" />
 
                 <TextInput
                     id="name"
@@ -55,7 +51,7 @@ const form = useForm({
             </div>
 
             <div>
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="email" value="メールアドレス" />
 
                 <TextInput
                     id="email"
@@ -91,7 +87,7 @@ const form = useForm({
             </div>
 
             <div class="flex items-center gap-4">
-                <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+                <PrimaryButton :disabled="form.processing">登録</PrimaryButton>
 
                 <Transition
                     enter-active-class="transition ease-in-out"
