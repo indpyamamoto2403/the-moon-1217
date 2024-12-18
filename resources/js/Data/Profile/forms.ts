@@ -1,0 +1,58 @@
+export const fields = [
+    {
+        id: 'name',
+        label: '名前',
+        type: 'text',
+        model: 'name',
+        required: true,
+        autocomplete: 'name',
+    },
+    {
+        id: 'email',
+        label: 'メールアドレス',
+        type: 'email',
+        model: 'email',
+        required: true,
+        autocomplete: 'username',
+    },
+    {
+        id: 'companyName',
+        label: '会社名',
+        type: 'text',
+        model: 'company_name',
+        autocomplete: 'organization',
+    },
+    {
+        id: 'department',
+        label: '部署',
+        type: 'text',
+        model: 'department',
+    },
+    {
+        id: 'post',
+        label: '役職',
+        type: 'text',
+        model: 'position',
+    },
+    {
+        id: 'zipCode',
+        label: '郵便番号',
+        type: 'text',
+        model: 'zipCode',
+        pattern: '[0-9]{3}-[0-9]{4}',
+        placeholder: '123-4567',
+    },
+    {
+        id: 'address',
+        label: '住所',
+        type: 'text',
+        model: 'address',
+    },
+    {
+        id: 'companyUrl',
+        label: '会社URL',
+        type: 'url',
+        model: 'company_url',
+        placeholder: 'https://example.com',
+    },
+];

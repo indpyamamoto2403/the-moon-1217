@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserProfile extends Model
 {
     use HasFactory;
-
+    public static $snakeAttributes = false;
     /**
      * モデルに対応するテーブル名
      *

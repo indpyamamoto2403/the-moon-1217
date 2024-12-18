@@ -1,12 +1,12 @@
 export interface userProfile {
-    userId: number;
+    user_id: number;
     name: string;
     email: string;
-    companyName: string;
+    company_name: string;
     department: string;
     position: string;
     zipCode: string;
     address: string;
-    companyUrl: string;
-    companyOverview: string;
+    company_url: string;
+    company_overview: string;
 }
