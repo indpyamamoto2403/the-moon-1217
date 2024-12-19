@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Services\ProfileService;
+use App\Utils\OpenAI\OpenAIAPIClient;
 
 class ProfileController extends Controller
 {
@@ -19,6 +20,8 @@ class ProfileController extends Controller
 
     public function __construct()
     {
+        $client = new OpenAIAPIClient();
+        $client->fetchAnswerOnlyPrompt('What is the capital of Japan?');
         $this->userId = Auth::user()->id;
         $this->profileService = new ProfileService();
     }

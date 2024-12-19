@@ -33,7 +33,7 @@ defineProps({
                     :href="route('dashboard')"
                     class="bg-yellow-300 hover:bg-yellow-400 translate-x-2rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                 >
-                register-profile
+                Go To Profile
                 </Link>
                 <template v-else>
                     <div class="flex space-x-4">
