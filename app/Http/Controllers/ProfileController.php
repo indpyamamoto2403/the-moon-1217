@@ -12,6 +12,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use App\Services\ProfileService;
 use App\Utils\OpenAI\OpenAIAPIClient;
+use App\DomainLogic\Prompts\Prompts;
 
 class ProfileController extends Controller
 {
@@ -21,7 +22,6 @@ class ProfileController extends Controller
     public function __construct()
     {
         $client = new OpenAIAPIClient();
-        $client->fetchAnswerOnlyPrompt('What is the capital of Japan?');
         $this->userId = Auth::user()->id;
         $this->profileService = new ProfileService();
     }
@@ -44,9 +44,9 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): Response | RedirectResponse
     {
-        //認証テーブル/プロフィール共に更新
-        $this->profileService->save($request);
-        //$this->profileService->makeTag($request);
+        $this->profileService->save($request); //ユーザー情報をアップデート
+        $answer = $this->profileService->getClassificationNumberByCompanyOverview($request->company_overview); //会社概要から経済産業分類を取得
+        dd($answer);
         return Inertia::render('Profile/Completed');
     }
 
